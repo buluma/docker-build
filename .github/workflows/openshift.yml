@@ -121,11 +121,11 @@ jobs:
       run: |
         echo "IMAGE_TAGS=latest ${GITHUB_SHA::12}" | tee -a $GITHUB_ENV
 
-    - name: fuse-overlayfs
-      run: |
-        sudo apt-get install fuse-overlayfs
-        mkdir -vp ~/.config/containers
-        printf "[storage.options]\nmount_program=\"/usr/bin/fuse-overlayfs\"" > ~/.config/containers/storage.conf
+    # - name: fuse-overlayfs
+    #   run: |
+    #     sudo apt-get install fuse-overlayfs
+    #     mkdir -vp ~/.config/containers
+    #     printf "[storage.options]\nmount_program=\"/usr/bin/fuse-overlayfs\"" > ~/.config/containers/storage.conf
 
 
     # https://github.com/redhat-actions/buildah-build#readme
