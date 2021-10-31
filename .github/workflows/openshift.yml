@@ -123,9 +123,9 @@ jobs:
 
     - name: fuse-overlayfs
       run: |
-      sudo apt-get install fuse-overlayfs
-      mkdir -vp ~/.config/containers
-      printf "[storage.options]\nmount_program=\"/usr/bin/fuse-overlayfs\"" > ~/.config/containers/storage.conf
+        sudo apt-get install fuse-overlayfs
+        mkdir -vp ~/.config/containers
+        printf "[storage.options]\nmount_program=\"/usr/bin/fuse-overlayfs\"" > ~/.config/containers/storage.conf
 
 
     # https://github.com/redhat-actions/buildah-build#readme
