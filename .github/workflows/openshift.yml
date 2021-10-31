@@ -116,9 +116,6 @@ jobs:
       run: |
         echo "APP_NAME=$(basename $PWD)" | tee -a $GITHUB_ENV
 
-    - name: Check Project
-      run: oc status
-
     - name: Determine image tags
       if: env.IMAGE_TAGS == ''
       run: |
@@ -164,6 +161,9 @@ jobs:
         openshift_token: ${{ env.OPENSHIFT_TOKEN }}
         insecure_skip_tls_verify: true
         namespace: ${{ env.OPENSHIFT_NAMESPACE }}
+
+    - name: Check Project
+      run: oc status
 
     # This step should create a deployment, service, and route to run your app and expose it to the internet.
     # https://github.com/redhat-actions/oc-new-app#readme
