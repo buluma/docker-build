@@ -4,6 +4,6 @@ COPY . .
 
 RUN npm install --production
 
-RUN npm install -g grunt-cli
+RUN npm install gulp
 
 ENTRYPOINT ["node", "/lib/main.js"]
