@@ -116,6 +116,9 @@ jobs:
       run: |
         echo "APP_NAME=$(basename $PWD)" | tee -a $GITHUB_ENV
 
+    - name: Check Project
+      run: oc status
+
     - name: Determine image tags
       if: env.IMAGE_TAGS == ''
       run: |
